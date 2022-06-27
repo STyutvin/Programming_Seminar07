@@ -32,19 +32,19 @@ int columnIndex = Convert.ToInt32(Console.ReadLine());
 Console.Write("Создаю случайный двумерный массив... ");
 Console.WriteLine("Массив создан!");
 PrintArray(matrix);
+int flag=0;
 for (int i = 0; i < matrix.GetLength(0); i++) //цикл для задания строк
 {
     for (int j = 0; j < matrix.GetLength(1); j++) //цикл для задания столбцов
     {
-        if (i==rowIndex && j==columnIndex) Console.Write("Значение элемента по указанному индексу: " + matrix[i,j]);
-        //else if (i!=rowIndex || j!=columnIndex) Console.WriteLine("Такого элемента нет");
-        //break;
-        //break;
-        //else Console.WriteLine("Такого элемента нет.");        
+        if (i==rowIndex && j==columnIndex)
+        {
+            flag=1;
+        }              
     }
-    //if (i!=rowIndex || j!=columnIndex) Console.Write("Такого элемента нет");
-    //break;
-    //else Console.WriteLine("Такого элемента нет.");
 }
-//Console.WriteLine("Такого элемента нет.");
+if (flag==1) Console.WriteLine("Значение элемента по указанному индексу: " + matrix[rowIndex,columnIndex]);
+else Console.WriteLine("Такого элемента нет.");
+//if (flag) Console.WriteLine("Такого элемента нет.");
+//Console.WriteLine(flag);
 //else Console.WriteLine("Такого элемента нет.");
